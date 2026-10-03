@@ -40,12 +40,13 @@ Conseil : exporter les photos en JPEG ou WebP, 1600 px de large au maximum, pour
 ## Calendrier des disponibilités
 
 Le workflow `.github/workflows/availability.yml` télécharge toutes les six heures le
-calendrier iCal de l'annonce Airbnb et enregistre les dates indisponibles dans
+calendrier iCal de l'annonce Airbnb (et celui de Booking.com s'il est configuré), fusionne les deux et enregistre les dates indisponibles dans
 `data/availability.json` (script `scripts/update_availability.py`). La page affiche
 ensuite ces dates ; sans ce fichier, la section « Disponibilités » reste masquée.
 
-L'adresse iCal est confidentielle : elle se règle dans le dépôt GitHub, sous
-**Settings → Secrets and variables → Actions**, secret `AIRBNB_ICAL_URL`.
+Les adresses iCal sont confidentielles : elles se règlent dans le dépôt GitHub, sous
+**Settings → Secrets and variables → Actions**, secrets `AIRBNB_ICAL_URL` (obligatoire)
+et `BOOKING_ICAL_URL` (facultatif).
 Pour forcer une mise à jour : onglet **Actions → Mise à jour des disponibilités → Run workflow**.
 
 ## Publication sur GitHub Pages

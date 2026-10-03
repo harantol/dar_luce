@@ -18,9 +18,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Télécharger le calendrier Airbnb
+      - name: Télécharger les calendriers
         env:
           AIRBNB_ICAL_URL: ${{ secrets.AIRBNB_ICAL_URL }}
+          BOOKING_ICAL_URL: ${{ secrets.BOOKING_ICAL_URL }}
         run: python3 scripts/update_availability.py
 
       - name: Enregistrer les changements

@@ -1,9 +1,10 @@
-"""Télécharge le calendrier iCal de l'annonce Airbnb et n'en publie que les
-plages de dates indisponibles, dans data/availability.json.
+"""Télécharge les calendriers iCal des annonces (Airbnb, Booking.com) et n'en
+publie que les plages de dates indisponibles, dans data/availability.json.
 
-L'adresse du calendrier est lue dans la variable d'environnement
-AIRBNB_ICAL_URL. Ni cette adresse ni le contenu brut du calendrier (qui
-contient des détails de réservation) ne sont écrits ou affichés.
+Les adresses sont lues dans les variables d'environnement AIRBNB_ICAL_URL
+(obligatoire) et BOOKING_ICAL_URL (facultative). Ni ces adresses ni le contenu
+brut des calendriers (qui contient des détails de réservation) ne sont écrits
+ou affichés.
 """
 import datetime
 import json
@@ -13,6 +14,11 @@ import sys
 import urllib.request
 
 OUTPUT = os.path.join(os.path.dirname(__file__), "..", "data", "availability.json")
+# (variable d'environnement, nom affiché, obligatoire)
+SOURCES = [
+    ("AIRBNB_ICAL_URL", "Airbnb", True),
+    ("BOOKING_ICAL_URL", "Booking.com", False),
+]
 DATE_LINE = re.compile(r"^(DTSTART|DTEND)[^:]*:(\d{8})")
 
 
@@ -49,26 +55,38 @@ def merge_ranges(ranges):
     return merged
 
 
-def main():
-    url = os.environ.get("AIRBNB_ICAL_URL", "").strip()
-    if not url:
-        sys.exit("AIRBNB_ICAL_URL n'est pas défini (secret du dépôt manquant).")
-
+def download(url, name):
+    """Retourne le texte du calendrier, ou arrête tout sans toucher au fichier publié."""
     request = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (dar-luce-site)"})
     try:
         with urllib.request.urlopen(request, timeout=30) as response:
             ics_text = response.read().decode("utf-8", errors="replace")
     except Exception as error:  # ne pas afficher l'adresse, qui est confidentielle
-        sys.exit("Téléchargement du calendrier impossible : %s" % type(error).__name__)
-
-    # En cas de réponse inattendue, on garde le fichier précédent tel quel.
+        sys.exit("%s : téléchargement du calendrier impossible (%s)." % (name, type(error).__name__))
     if "BEGIN:VCALENDAR" not in ics_text:
-        sys.exit("La réponse n'est pas un calendrier iCal.")
+        sys.exit("%s : la réponse n'est pas un calendrier iCal." % name)
+    return ics_text
+
+
+def main():
+    # Si une source configurée échoue, on garde le fichier précédent tel quel :
+    # mieux vaut un calendrier en retard qu'un calendrier qui oublie des réservations.
+    ranges = []
+    for variable, name, required in SOURCES:
+        url = os.environ.get(variable, "").strip()
+        if not url:
+            if required:
+                sys.exit("%s n'est pas défini (secret du dépôt manquant)." % variable)
+            print("%s : non configuré, ignoré." % name)
+            continue
+        found = parse_ranges(download(url, name))
+        print("%s : %d événement(s)." % (name, len(found)))
+        ranges.extend(found)
 
     today = datetime.date.today()
     booked = [
         [start.isoformat(), end.isoformat()]
-        for start, end in merge_ranges(parse_ranges(ics_text))
+        for start, end in merge_ranges(ranges)
         if end > today
     ]
 
