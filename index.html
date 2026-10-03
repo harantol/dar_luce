@@ -130,6 +130,22 @@
       </div>
     </section>
 
+    <section id="disponibilites" class="section" data-availability data-remote="https://raw.githubusercontent.com/harantol/dar_luce/main/data/availability.json" data-src="data/availability.json" hidden>
+      <div class="container center">
+        <p class="eyebrow">Disponibilités</p>
+        <h2>Quand venir ?</h2>
+        <div class="cal">
+          <div class="cal-nav">
+            <button class="cal-prev" type="button" aria-label="Mois précédents">←</button>
+            <button class="cal-next" type="button" aria-label="Mois suivants">→</button>
+          </div>
+          <div class="cal-months" aria-live="polite"></div>
+          <p class="cal-legend"><span class="cal-key free"></span>Disponible <span class="cal-key booked"></span>Indisponible</p>
+          <p class="cal-note">Calendrier indicatif, synchronisé plusieurs fois par jour avec Airbnb. La réservation se fait sur l'annonce.</p>
+        </div>
+      </div>
+    </section>
+
     <section class="cta">
       <div class="container reveal">
         <h2>Envie de venir ?</h2>
@@ -162,5 +178,6 @@
   </footer>
 
   <script src="js/main.js" defer></script>
+  <script src="js/calendar.js" defer></script>
 </body>
 </html>

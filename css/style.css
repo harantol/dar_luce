@@ -220,6 +220,35 @@ ul { list-style: none; margin: 0; padding: 0; }
 .distances li { display: flex; justify-content: space-between; gap: 1rem; padding: 0.8rem 0; border-top: 1px solid var(--line); }
 .distances li span:last-child { color: var(--muted); white-space: nowrap; }
 
+/* ---------- Disponibilités ---------- */
+.cal { max-width: 720px; margin: 2rem auto 0; }
+.cal-nav { display: flex; justify-content: space-between; margin-bottom: -2.4rem; }
+.cal-nav button {
+  width: 40px; height: 40px;
+  border: 1px solid var(--line); border-radius: 50%;
+  background: var(--bg); color: var(--text);
+  font-size: 1.1rem; cursor: pointer;
+}
+.cal-nav button:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
+.cal-nav button:disabled { opacity: 0.35; cursor: default; }
+.cal-months { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+.cal-month h3 { font-size: 1.15rem; text-transform: capitalize; margin-bottom: 1rem; line-height: 40px; }
+.cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; font-size: 0.9rem; }
+.cal-weekday { color: var(--muted); font-size: 0.75rem; text-transform: uppercase; padding-bottom: 0.3rem; }
+.cal-day { aspect-ratio: 1; display: grid; place-items: center; border-radius: 8px; }
+.cal-day.free { background: var(--bg-alt); }
+.cal-day.booked { color: var(--muted); text-decoration: line-through; opacity: 0.55; }
+.cal-day.past { color: var(--muted); opacity: 0.35; }
+.cal-legend { margin: 1.75rem 0 0.5rem; font-size: 0.9rem; color: var(--muted); }
+.cal-key { display: inline-block; width: 0.9rem; height: 0.9rem; border-radius: 4px; vertical-align: -0.1rem; margin: 0 0.35rem 0 1rem; }
+.cal-key.free { background: var(--bg-alt); border: 1px solid var(--line); margin-left: 0; }
+.cal-key.booked { border: 1px dashed var(--muted); opacity: 0.6; }
+.cal-note { font-size: 0.85rem; color: var(--muted); margin: 0; }
+@media (max-width: 640px) {
+  .cal-months { grid-template-columns: 1fr; }
+  .cal-month + .cal-month { display: none; }
+}
+
 /* ---------- Appel à réserver ---------- */
 .cta {
   padding: clamp(3.5rem, 8vw, 5.5rem) 0;
