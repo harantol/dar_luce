@@ -228,6 +228,9 @@ ul { list-style: none; margin: 0; padding: 0; }
   background: var(--pattern), linear-gradient(160deg, #b5532f, #7c341b);
 }
 .cta p { color: rgba(255, 255, 255, 0.9); margin-bottom: 1.75rem; }
+.airbnb-embed-frame { width: min(450px, 100%); min-height: 300px; margin: 0 auto 1.75rem; }
+.airbnb-embed-frame a { color: #fff; display: block; }
+.airbnb-embed-frame iframe { border-radius: var(--radius); }
 
 /* ---------- Contact et pied de page ---------- */
 .contact-link { font-family: var(--serif); font-size: clamp(1.3rem, 4vw, 1.9rem); overflow-wrap: anywhere; }

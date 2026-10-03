@@ -28,8 +28,7 @@ puis visiter http://localhost:8000.
 Chercher `TODO` dans `index.html` et `en/index.html` : chaque élément provisoire est signalé.
 Toute modification de contenu est à reporter dans les deux fichiers.
 
-- **Lien Airbnb** : remplacer les trois `https://www.airbnb.fr/` par l'adresse de l'annonce.
-- **Textes** : remplacer les passages entre crochets `[…]` (ville, présentation, chiffres, équipements, distances).
+- **Textes** : présentation, capacité et équipements sont repris de l'annonce Airbnb ; les mettre à jour si l'annonce change.
 - **E-mail** : remplacer `contact@example.com`.
 - **Photos** : déposer les fichiers dans `images/`, puis remplacer dans chaque bloc
   `<span>…</span>` par `<img src="images/nom.jpg" alt="Description" loading="lazy">`.
