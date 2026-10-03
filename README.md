@@ -6,7 +6,8 @@ HTML, CSS et JavaScript purs : aucune dépendance, aucune étape de build.
 ## Structure
 
 ```
-index.html        Contenu de la page
+index.html        Contenu de la page (français)
+en/index.html     Version anglaise, à tenir à jour en parallèle
 css/style.css     Styles (couleurs et polices en haut du fichier)
 js/main.js        Menu mobile et animations d'apparition
 images/           Photos et favicon
@@ -24,7 +25,8 @@ puis visiter http://localhost:8000.
 
 ## Contenu à compléter
 
-Chercher `TODO` dans `index.html` : chaque élément provisoire est signalé.
+Chercher `TODO` dans `index.html` et `en/index.html` : chaque élément provisoire est signalé.
+Toute modification de contenu est à reporter dans les deux fichiers.
 
 - **Lien Airbnb** : remplacer les trois `https://www.airbnb.fr/` par l'adresse de l'annonce.
 - **Textes** : remplacer les passages entre crochets `[…]` (ville, présentation, chiffres, équipements, distances).

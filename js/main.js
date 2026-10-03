@@ -4,11 +4,15 @@
   // Menu mobile
   var toggle = document.querySelector('.nav-toggle');
   var nav = document.getElementById('menu');
+  var english = document.documentElement.lang === 'en';
+  var labels = english
+    ? { open: 'Open menu', close: 'Close menu' }
+    : { open: 'Ouvrir le menu', close: 'Fermer le menu' };
 
   function setMenu(open) {
     nav.classList.toggle('open', open);
     toggle.setAttribute('aria-expanded', String(open));
-    toggle.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+    toggle.setAttribute('aria-label', open ? labels.close : labels.open);
   }
 
   toggle.addEventListener('click', function () {
