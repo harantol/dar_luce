@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Dar Luce — Maison de vacances à Sidi Kaouki, Maroc</title>
-  <meta name="description" content="Dar Luce, une villa lumineuse de 4 chambres avec piscine à louer à Sidi Kaouki, près d'Essaouira, au Maroc. Découvrez la maison, ses équipements et réservez votre séjour sur Airbnb.">
+  <meta name="description" content="Dar Luce, une villa lumineuse de 4 chambres avec piscine à louer à Sidi Kaouki, près d'Essaouira, au Maroc. Découvrez la maison, ses équipements et réservez votre séjour sur Airbnb ou Booking.com.">
   <meta name="theme-color" content="#b5532f">
   <meta property="og:title" content="Dar Luce — Maison de vacances à Sidi Kaouki, Maroc">
-  <meta property="og:description" content="Une villa de 4 chambres avec piscine à Sidi Kaouki, près d'Essaouira. Réservation sur Airbnb.">
+  <meta property="og:description" content="Une villa de 4 chambres avec piscine à Sidi Kaouki, près d'Essaouira. Réservation sur Airbnb ou Booking.com.">
   <meta property="og:type" content="website">
   <!-- TODO : ajouter images/partage.jpg (1200×630) puis décommenter
   <meta property="og:image" content="images/partage.jpg"> -->
@@ -33,7 +33,7 @@
         <a href="#situation">Situation</a>
         <a href="#contact">Contact</a>
         <a class="lang" href="en/index.html" lang="en" hreflang="en" aria-label="English version">EN</a>
-        <a class="btn btn-small" href="https://www.airbnb.fr/rooms/1055538272395774971" target="_blank" rel="noopener">Réserver</a>
+        <a class="btn btn-small" href="#reserver">Réserver</a>
       </nav>
     </div>
   </header>
@@ -46,6 +46,7 @@
         <p class="hero-lead">Une maison de lumière pour poser ses valises, ralentir et goûter à la douceur marocaine.</p>
         <div class="hero-actions">
           <a class="btn" href="https://www.airbnb.fr/rooms/1055538272395774971" target="_blank" rel="noopener">Réserver sur Airbnb</a>
+          <a class="btn" href="https://www.booking.com/Share-Bm2w2zM" target="_blank" rel="noopener">Réserver sur Booking.com</a>
           <a class="btn btn-ghost" href="#maison">Découvrir la maison</a>
         </div>
       </div>
@@ -59,7 +60,7 @@
           <p>Dar Luce est une maison de campagne proche d'Essaouira, implantée au cœur d'un jardin paysagé de plus d'un hectare. Lumineuse et agréable à vivre, elle s'organise autour de quatre chambres doubles indépendantes, qui donnent toutes sur une grande terrasse avec piscine.</p>
           <p>Le jardin offre une beauté simple et authentique : un univers très végétal et trois grands bassins en cascade où se côtoient grenouilles, poissons rouges, tortues d'eau et nénuphars. Toute la propriété est à la disposition des voyageurs pendant leur séjour.</p>
           <ul class="facts">
-            <li><strong>6</strong><span>voyageurs</span></li>
+            <li><strong>2 à 8</strong><span>voyageurs</span></li>
             <li><strong>4</strong><span>chambres</span></li>
             <li><strong>3</strong><span>salles de bain</span></li>
           </ul>
@@ -128,6 +129,12 @@
         <figure class="photo reveal"><img src="images/O_15-10-31_MAROC035.jpg" alt="Dunes et petite cascade dans l'arrière-pays" width="680" height="680" loading="lazy"></figure>
         <figure class="photo reveal"><img src="images/O_15-10-31_MAROC013.jpg" alt="Coucher de soleil sur l'océan depuis les dunes" width="1000" height="665" loading="lazy"></figure>
       </div>
+      <div class="container map reveal">
+        <div class="map-frame">
+          <iframe src="https://www.google.com/maps?q=31.400874,-9.708119&amp;z=11&amp;hl=fr&amp;output=embed" title="Carte : emplacement de Dar Luce" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+        <a href="https://maps.app.goo.gl/hHBwKJx5XQZcTk6D9" target="_blank" rel="noopener">Ouvrir dans Google Maps</a>
+      </div>
     </section>
 
     <section id="disponibilites" class="section" data-availability data-remote="https://raw.githubusercontent.com/harantol/dar_luce/main/data/availability.json" data-src="data/availability.json" hidden>
@@ -146,16 +153,19 @@
       </div>
     </section>
 
-    <section class="cta">
+    <section id="reserver" class="cta">
       <div class="container reveal">
         <h2>Envie de venir ?</h2>
-        <p>Les disponibilités et les tarifs sont à jour sur notre annonce Airbnb.</p>
+        <p>Les disponibilités et les tarifs sont à jour sur nos annonces Airbnb et Booking.com.</p>
         <div class="airbnb-embed-frame" data-id="1055538272395774971" data-view="home" data-hide-price="true">
           <a href="https://www.airbnb.fr/rooms/1055538272395774971?source=embed_widget">Voir sur Airbnb</a>
           <a href="https://www.airbnb.fr/rooms/1055538272395774971?source=embed_widget" rel="nofollow">Villa · Sidi Kaouki · 4 chambres · 5 lits · 3 salles de bain</a>
           <script async src="https://www.airbnb.fr/embeddable/airbnb_jssdk"></script>
         </div>
-        <a class="btn btn-light" href="https://www.airbnb.fr/rooms/1055538272395774971" target="_blank" rel="noopener">Voir les disponibilités</a>
+        <div class="cta-actions">
+          <a class="btn btn-light" href="https://www.airbnb.fr/rooms/1055538272395774971" target="_blank" rel="noopener">Réserver sur Airbnb</a>
+          <a class="btn btn-light" href="https://www.booking.com/Share-Bm2w2zM" target="_blank" rel="noopener">Réserver sur Booking.com</a>
+        </div>
       </div>
     </section>
 
@@ -164,8 +174,8 @@
         <p class="eyebrow">Contact</p>
         <h2>Une question avant de réserver ?</h2>
         <p>Écrivez-nous, nous répondons avec plaisir.</p>
-        <!-- TODO : adresse e-mail réelle -->
-        <a class="contact-link" href="mailto:contact@example.com">contact@example.com</a>
+        <!-- Adresse découpée pour échapper aux robots ; js/main.js en fait un lien -->
+        <span class="contact-link" data-user="pharant69" data-domain="gmail.com">pharant69 [arobase] gmail.com</span>
       </div>
     </section>
   </main>

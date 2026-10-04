@@ -41,5 +41,16 @@
     blocks.forEach(function (block) { block.classList.add('visible'); });
   }
 
+  // Adresse e-mail reconstituée ici pour ne pas figurer en clair dans le HTML
+  var contact = document.querySelector('.contact-link[data-user]');
+  if (contact) {
+    var address = contact.dataset.user + '@' + contact.dataset.domain;
+    var link = document.createElement('a');
+    link.className = contact.className;
+    link.href = 'mailto:' + address;
+    link.textContent = address;
+    contact.replaceWith(link);
+  }
+
   document.getElementById('annee').textContent = new Date().getFullYear();
 })();

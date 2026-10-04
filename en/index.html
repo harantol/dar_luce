@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Dar Luce — Holiday home in Sidi Kaouki, Morocco</title>
-  <meta name="description" content="Dar Luce, a bright 4-bedroom villa with a pool to rent in Sidi Kaouki, near Essaouira, Morocco. Discover the house and its amenities, and book your stay on Airbnb.">
+  <meta name="description" content="Dar Luce, a bright 4-bedroom villa with a pool to rent in Sidi Kaouki, near Essaouira, Morocco. Discover the house and its amenities, and book your stay on Airbnb or Booking.com.">
   <meta name="theme-color" content="#b5532f">
   <meta property="og:title" content="Dar Luce — Holiday home in Sidi Kaouki, Morocco">
-  <meta property="og:description" content="A 4-bedroom villa with a pool in Sidi Kaouki, near Essaouira. Book on Airbnb.">
+  <meta property="og:description" content="A 4-bedroom villa with a pool in Sidi Kaouki, near Essaouira. Book on Airbnb or Booking.com.">
   <meta property="og:type" content="website">
   <link rel="alternate" hreflang="fr" href="../">
   <link rel="alternate" hreflang="en" href="./">
@@ -31,7 +31,7 @@
         <a href="#location">Location</a>
         <a href="#contact">Contact</a>
         <a class="lang" href="../index.html" lang="fr" hreflang="fr" aria-label="Version française">FR</a>
-        <a class="btn btn-small" href="https://www.airbnb.com/rooms/1055538272395774971" target="_blank" rel="noopener">Book</a>
+        <a class="btn btn-small" href="#book">Book</a>
       </nav>
     </div>
   </header>
@@ -44,6 +44,7 @@
         <p class="hero-lead">A house full of light where you can put down your bags, slow down and enjoy the gentle Moroccan way of life.</p>
         <div class="hero-actions">
           <a class="btn" href="https://www.airbnb.com/rooms/1055538272395774971" target="_blank" rel="noopener">Book on Airbnb</a>
+          <a class="btn" href="https://www.booking.com/Share-Bm2w2zM" target="_blank" rel="noopener">Book on Booking.com</a>
           <a class="btn btn-ghost" href="#house">Discover the house</a>
         </div>
       </div>
@@ -57,7 +58,7 @@
           <p>Dar Luce is a country house near Essaouira, set in the middle of a landscaped garden of more than one hectare. Bright and easy to live in, it is laid out around four independent double bedrooms, all opening onto a large terrace with a pool.</p>
           <p>The garden has a simple, authentic beauty: lush planting and three large cascading ponds, home to frogs, goldfish, terrapins and water lilies. The whole property is at guests' disposal during their stay.</p>
           <ul class="facts">
-            <li><strong>6</strong><span>guests</span></li>
+            <li><strong>2 to 8</strong><span>guests</span></li>
             <li><strong>4</strong><span>bedrooms</span></li>
             <li><strong>3</strong><span>bathrooms</span></li>
           </ul>
@@ -126,6 +127,12 @@
         <figure class="photo reveal"><img src="../images/O_15-10-31_MAROC035.jpg" alt="Dunes and a small waterfall inland" width="680" height="680" loading="lazy"></figure>
         <figure class="photo reveal"><img src="../images/O_15-10-31_MAROC013.jpg" alt="Sunset over the ocean from the dunes" width="1000" height="665" loading="lazy"></figure>
       </div>
+      <div class="container map reveal">
+        <div class="map-frame">
+          <iframe src="https://www.google.com/maps?q=31.400874,-9.708119&amp;z=11&amp;hl=en&amp;output=embed" title="Map: location of Dar Luce" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+        <a href="https://maps.app.goo.gl/hHBwKJx5XQZcTk6D9" target="_blank" rel="noopener">Open in Google Maps</a>
+      </div>
     </section>
 
     <section id="availability" class="section" data-availability data-remote="https://raw.githubusercontent.com/harantol/dar_luce/main/data/availability.json" data-src="../data/availability.json" hidden>
@@ -144,16 +151,19 @@
       </div>
     </section>
 
-    <section class="cta">
+    <section id="book" class="cta">
       <div class="container reveal">
         <h2>Fancy a stay?</h2>
-        <p>Availability and rates are kept up to date on our Airbnb listing.</p>
+        <p>Availability and rates are kept up to date on our Airbnb and Booking.com listings.</p>
         <div class="airbnb-embed-frame" data-id="1055538272395774971" data-view="home" data-hide-price="true">
           <a href="https://www.airbnb.com/rooms/1055538272395774971?source=embed_widget">View on Airbnb</a>
           <a href="https://www.airbnb.com/rooms/1055538272395774971?source=embed_widget" rel="nofollow">Villa · Sidi Kaouki · 4 bedrooms · 5 beds · 3 bathrooms</a>
           <script async src="https://www.airbnb.com/embeddable/airbnb_jssdk"></script>
         </div>
-        <a class="btn btn-light" href="https://www.airbnb.com/rooms/1055538272395774971" target="_blank" rel="noopener">Check availability</a>
+        <div class="cta-actions">
+          <a class="btn btn-light" href="https://www.airbnb.com/rooms/1055538272395774971" target="_blank" rel="noopener">Book on Airbnb</a>
+          <a class="btn btn-light" href="https://www.booking.com/Share-Bm2w2zM" target="_blank" rel="noopener">Book on Booking.com</a>
+        </div>
       </div>
     </section>
 
@@ -162,8 +172,8 @@
         <p class="eyebrow">Contact</p>
         <h2>A question before you book?</h2>
         <p>Write to us, we will be happy to answer.</p>
-        <!-- TODO: real e-mail address -->
-        <a class="contact-link" href="mailto:contact@example.com">contact@example.com</a>
+        <!-- Address split to keep bots away; js/main.js turns it into a link -->
+        <span class="contact-link" data-user="pharant69" data-domain="gmail.com">pharant69 [at] gmail.com</span>
       </div>
     </section>
   </main>
