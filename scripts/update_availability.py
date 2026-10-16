@@ -57,7 +57,7 @@ def merge_ranges(ranges):
 
 def download(url, name):
     """Retourne le texte du calendrier, ou arrête tout sans toucher au fichier publié."""
-    request = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (dar-luce-site)"})
+    request = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (site-location-vacances)"})
     try:
         with urllib.request.urlopen(request, timeout=30) as response:
             ics_text = response.read().decode("utf-8", errors="replace")
